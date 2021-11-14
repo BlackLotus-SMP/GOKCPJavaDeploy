@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 public class KCPExecutor {
     public void runBinWithConfig(String dataDir, String binPath, String configPath, String os) {
         Process process;
-        String[] command = {os.equals("linux") ? String.format("./%s", binPath) : binPath, "-c", configPath};
+        String[] command = {!os.equals("windows") ? String.format("./%s", binPath) : binPath, "-c", configPath};
         try {
             process = new ProcessBuilder(command).directory(new File(dataDir)).redirectErrorStream(true).start();
         } catch (IOException e) {
