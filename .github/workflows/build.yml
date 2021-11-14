@@ -28,8 +28,8 @@ jobs:
       - name: build
         run: ./gradlew shadowJar
       - name: capture build artifacts
-      if: ${{ runner.os == 'Linux' }} # Only upload artifacts built from latest java on one OS
-      uses: actions/upload-artifact@v2
-      with:
-        name: Artifacts
-        path: build/libs/
+        if: ${{ runner.os == 'Linux' }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: Artifacts
+          path: build/libs/
