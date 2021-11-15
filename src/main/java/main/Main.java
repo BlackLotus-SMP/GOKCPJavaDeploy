@@ -1,5 +1,6 @@
 package main;
 
+import input.InputHandler;
 import kcp.KCPConfig;
 import kcp.KCPDownloader;
 import kcp.KCPExecutor;
@@ -15,6 +16,8 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.printf("Looking for KCP clients... OS: %s; Arch: %s;%n", OSUtils.getOSName(), OSUtils.getArch());
+        new Thread(InputHandler::processConsoleInput).start();
+
         KCPDownloader kcpDownloader = new KCPDownloader(getFileStart());
         String url = kcpDownloader.getValidTarGZUrl();
         if (url == null) {
