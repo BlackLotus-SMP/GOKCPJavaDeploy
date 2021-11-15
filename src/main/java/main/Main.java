@@ -6,10 +6,6 @@ import kcp.KCPExecutor;
 import utils.OSUtils;
 
 import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.attribute.PosixFilePermission;
-import java.nio.file.attribute.PosixFilePermissions;
 
 public class Main {
     private static String DATA_DIR = "data";
