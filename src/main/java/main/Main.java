@@ -15,7 +15,7 @@ public class Main {
     private static String CONFIG_FILE = "config.json";
 
     public static void main(String[] args) {
-        System.out.printf("Looking for KCP clients... OS: %s; Arch: %s;%n", OSUtils.getOSName(), OSUtils.getArch());
+        System.out.printf("Looking for KCP clients... OS: %s; Arch: %s;%n", OSUtils.getOSName(), OSUtils.getArchName());
         new Thread(InputHandler::processConsoleInput).start();
 
         KCPDownloader kcpDownloader = new KCPDownloader(getFileStart());
@@ -70,6 +70,6 @@ public class Main {
     }
 
     private static String getFileStart() {
-        return String.format("kcptun-%s-%s-", OSUtils.getOSName(), OSUtils.getArch());
+        return String.format("kcptun-%s-%s-", OSUtils.getOSName(), OSUtils.getArchName());
     }
 }
