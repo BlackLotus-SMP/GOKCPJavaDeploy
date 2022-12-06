@@ -1,5 +1,5 @@
 plugins {
-    id 'com.github.johnrengelman.shadow' version '6.1.0'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
     id 'java'
     id 'application'
 }
@@ -7,10 +7,16 @@ plugins {
 mainClassName = 'main.Main'
 
 group 'com.kahzerx'
-version '1.0'
+version ''
 
 repositories {
     mavenCentral()
+}
+
+shadowJar {
+    archiveBaseName.set('KCPBuild')
+    archiveClassifier.set('')
+    archiveVersion.set('')
 }
 
 dependencies {
